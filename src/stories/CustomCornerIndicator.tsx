@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as OhNo from "this-import-does-not-exist";
 
 export const CustomCornerIndicator: React.FC = () => {
   return (
