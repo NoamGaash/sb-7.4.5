@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { StoryFn, Meta, StoryObj } from "@storybook/react";
+import {ohNo} from "this-import-does-not-exist"
 import {
   createEmptyMatrix,
   Spreadsheet,
@@ -69,18 +70,18 @@ const meta: Meta<Props<StringCell>> = {
 
 export default meta;
 
-export const Basic: StoryObj = {
+export const BasicBroken: StoryObj = {
   args: {},
 };
 
-export const DarkMode: StoryObj = {
+export const DarkModeBroken: StoryObj = {
   args: {
     ...meta.args,
     darkMode: true,
   },
 };
 
-export const Controlled: StoryFn<Props<StringCell>> = (props) => {
+export const ControlledBroken: StoryFn<Props<StringCell>> = (props) => {
   const [data, setData] = React.useState(EMPTY_DATA);
 
   const addColumn = React.useCallback(
@@ -131,14 +132,14 @@ export const Controlled: StoryFn<Props<StringCell>> = (props) => {
   );
 };
 
-export const CustomRowLabels: StoryObj = {
+export const CustomRowLabelsBroken: StoryObj = {
   args: {
     ...meta.args,
     rowLabels: ["Dan", "Alice", "Bob", "Steve", "Adam", "Ruth"],
   },
 };
 
-export const CustomColumnLabels: StoryObj = {
+export const CustomColumnLabelsBroken: StoryObj = {
   args: {
     ...meta.args,
     columnLabels: ["Name", "Age", "Email", "Address"],
